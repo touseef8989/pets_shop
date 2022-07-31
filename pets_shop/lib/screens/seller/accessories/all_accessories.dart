@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:pets_shop/screens/seller/equipments/update_accessories.dart';
+import 'package:pets_shop/screens/seller/accessories/update_accessories.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../../models/equipment_model.dart';
+import '../../../models/accessories_model.dart';
 
-class AllEquipments extends StatelessWidget {
-  const AllEquipments({Key? key}) : super(key: key);
+class ALLAccessoriesHere extends StatelessWidget {
+  const ALLAccessoriesHere({Key? key}) : super(key: key);
   static const String id = "updateequipments";
 
   @override

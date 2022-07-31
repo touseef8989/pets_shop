@@ -3,11 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../../widgets/ecobutton.dart';
 import '../../../../widgets/ecotextfield.dart';
-import '../../../models/disease_model.dart';
+import '../../../models/medicine_model.dart';
 
 class UpdateDeseaseScreen extends StatefulWidget {
   String? id;
-  DiseaseModel? desease;
+  MedicineModel? desease;
   UpdateDeseaseScreen({Key? key, this.id, this.desease}) : super(key: key);
   @override
   State<UpdateDeseaseScreen> createState() => _UpdateDeseaseScreenState();
@@ -19,9 +19,9 @@ class _UpdateDeseaseScreenState extends State<UpdateDeseaseScreen> {
   TextEditingController diseaseTreatment = TextEditingController();
   @override
   void initState() {
-    diseaseTitle.text = widget.desease!.diseaseTitle!;
-    diseaseSymtomps.text = widget.desease!.diseaseSymtomps!;
-    diseaseTreatment.text = widget.desease!.diseaseTreatment!;
+    diseaseTitle.text = widget.desease!.medicineTitle!;
+    diseaseSymtomps.text = widget.desease!.medicineSymtomps!;
+    diseaseTreatment.text = widget.desease!.medicineTreatment!;
     // diseaseTitle.text = widget.desease!.diseaseTitle!;
 
     super.initState();
@@ -105,12 +105,12 @@ class _UpdateDeseaseScreenState extends State<UpdateDeseaseScreen> {
     setState(() {
       isSaving = true;
     });
-    await DiseaseModel.updateDesease(
+    await MedicineModel.updateMedicine(
       widget.id!,
-      DiseaseModel(
-        diseaseTitle: diseaseTitle.text,
-        diseaseTreatment: diseaseTreatment.text,
-        diseaseSymtomps: diseaseSymtomps.text,
+      MedicineModel(
+        medicineTitle: diseaseTitle.text,
+        medicineTreatment: diseaseTreatment.text,
+        medicineSymtomps: diseaseSymtomps.text,
         sellerId: FirebaseAuth.instance.currentUser!.uid,
       ),
     ).whenComplete(() {

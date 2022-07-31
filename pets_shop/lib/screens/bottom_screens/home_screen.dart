@@ -1,14 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:pets_shop/screens/seller/fish_diseaes.dart';
-import 'package:pets_shop/screens/user_screens/equipments/all_equipment.dart';
+import 'package:pets_shop/screens/seller/pet_medicine.dart';
 import 'package:pets_shop/widgets/catagory_home_boxes.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../models/productmodel.dart';
 import '../../product_detail_screen.dart';
-import '../seller/show_fish_food.dart';
+import '../seller/show_peet_food.dart';
+import '../user_screens/user-accessories/user_all_accessories.dart';
 
 List catagories = [
   "Cat",
@@ -201,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
                         child: const Text(
-                          "PURCHASE EQUIPMENTS",
+                          "PURCHASE Accessories",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -223,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => FishDiseasese()));
+                                builder: (context) => PetMedicine()));
                       },
                       child: Container(
                         height: 100,
@@ -234,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: const Center(
                           child: (Text(
-                            "Fish Diseases",
+                            "Pet Medicine",
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -253,18 +253,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => FishFood()));
+                                  builder: (context) => ShowPeetFood()));
                         },
                         child: Container(
                           height: 100,
                           width: MediaQuery.of(context).size.width * 0.45,
                           decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 71, 207, 241),
+                            color: Colors.blue,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: const Center(
                             child: (Text(
-                              "Fish Food",
+                              "Peet Food",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,

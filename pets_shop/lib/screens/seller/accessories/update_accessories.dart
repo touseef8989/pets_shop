@@ -9,7 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:sizer/sizer.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../../models/equipment_model.dart';
+import '../../../models/accessories_model.dart';
 
 class UpdateEquipments extends StatefulWidget {
   String? id;

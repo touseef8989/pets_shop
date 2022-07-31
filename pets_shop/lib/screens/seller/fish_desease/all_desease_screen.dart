@@ -3,17 +3,18 @@ import 'package:pets_shop/screens/seller/fish_desease/fish_update.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../../models/disease_model.dart';
+import '../../../models/medicine_model.dart';
 
 final currentId = FirebaseAuth.instance.currentUser!.uid;
 
-class AllFishDeseaseScreen extends StatelessWidget {
-  const AllFishDeseaseScreen({Key? key}) : super(key: key);
+class SellerViewMedicine extends StatelessWidget {
+  const SellerViewMedicine({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 247, 169, 60),
         title: Text("FISH DESEASE"),
       ),
       body: StreamBuilder(
@@ -69,7 +70,7 @@ class AllFishDeseaseScreen extends StatelessWidget {
                                 children: [
                                   IconButton(
                                     onPressed: () {
-                                      DiseaseModel.deleteDesease(
+                                      MedicineModel.deleteMedicine(
                                           data[index].id);
                                     },
                                     icon: const Icon(Icons.delete_forever),
@@ -81,13 +82,13 @@ class AllFishDeseaseScreen extends StatelessWidget {
                                           MaterialPageRoute(builder: (_) {
                                         return UpdateDeseaseScreen(
                                           id: data[index].id,
-                                          desease: DiseaseModel(
-                                            diseaseTitle: data[index]
-                                                ['diseaseTitle'],
-                                            diseaseSymtomps: data[index]
-                                                ['diseaseSymtomps'],
-                                            diseaseTreatment: data[index]
-                                                ['diseaseTreatment'],
+                                          desease: MedicineModel(
+                                            medicineTitle: data[index]
+                                                ['medicineTitle'],
+                                            medicineSymtomps: data[index]
+                                                ['medicineSymtomps'],
+                                            medicineTreatment: data[index]
+                                                ['medicineTreatment'],
                                             sellerId: data[index]['sllerId'],
                                           ),
                                         );

@@ -81,7 +81,7 @@ class _BottomPageState extends State<BottomPage> {
                             const Icon(
                               Icons.brightness_1,
                               size: 20,
-                              color: Colors.green,
+                             color: Color.fromARGB(255, 247, 169, 60),
                             ),
                             Positioned.fill(
                               child: Align(

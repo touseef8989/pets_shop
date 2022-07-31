@@ -5,17 +5,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../../widgets/ecobutton.dart';
 import '../../../../widgets/ecotextfield.dart';
-import 'all_fish_food.dart';
+import 'seller_view_pet_food.dart';
 // import '../../saller/fish_desease/all_desease_screen.dart';
 // import '../../saller/fish_desease/all_desease_screen.dart';
 
-class AddFishFood extends StatefulWidget {
-  const AddFishFood({Key? key}) : super(key: key);
+class SellerAddPetFood extends StatefulWidget {
+  const SellerAddPetFood({Key? key}) : super(key: key);
   @override
-  State<AddFishFood> createState() => _AddFishFoodState();
+  State<SellerAddPetFood> createState() => _SellerAddPetFoodState();
 }
 
-class _AddFishFoodState extends State<AddFishFood> {
+class _SellerAddPetFoodState extends State<SellerAddPetFood> {
   FirebaseAuth auth = FirebaseAuth.instance;
 
   TextEditingController foodTitleC = TextEditingController();
@@ -29,7 +29,8 @@ class _AddFishFoodState extends State<AddFishFood> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ADD FISH FOOD"),
+        backgroundColor: Color.fromARGB(255, 247, 169, 60),
+        title: Text("ADD PET FOOD"),
       ),
       body: SafeArea(
         child: SizedBox(
@@ -43,10 +44,7 @@ class _AddFishFoodState extends State<AddFishFood> {
                 key: formkey,
                 child: Column(
                   children: [
-                    const Text(
-                      "Enter Fish Food...",
-                      style: EcoStyle.boldstyle,
-                    ),
+                  
                     EcoTextField(
                       controller: foodTitleC,
                       hinttext: "Enter the food title...",

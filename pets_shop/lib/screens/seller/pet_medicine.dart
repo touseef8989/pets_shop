@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class AdminShowFishDiseasese extends StatefulWidget {
-  const AdminShowFishDiseasese({Key? key}) : super(key: key);
+class PetMedicine extends StatefulWidget {
+  const PetMedicine({Key? key}) : super(key: key);
 
   @override
-  State<AdminShowFishDiseasese> createState() => _AdminShowFishDiseaseseState();
+  State<PetMedicine> createState() => _PetMedicineState();
 }
 
-class _AdminShowFishDiseaseseState extends State<AdminShowFishDiseasese> {
+class _PetMedicineState extends State<PetMedicine> {
   // CollectionReference db = FirebaseFirestore.instance
   //     .collection("user")
   //     .where("type", isEqualTo: "seller") as CollectionReference<Object?>;
@@ -25,14 +25,14 @@ class _AdminShowFishDiseaseseState extends State<AdminShowFishDiseasese> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Color.fromARGB(255, 71, 207, 241),
-          title: Text("Show-Fish-Diseases"),
+          backgroundColor: Color.fromARGB(255, 247, 169, 60),
+          title: Text("Show-Peet-Medicine"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: StreamBuilder(
             stream:
-                FirebaseFirestore.instance.collection('desease').snapshots(),
+                FirebaseFirestore.instance.collection('medicine').snapshots(),
             // initialData: initialData,
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -50,7 +50,8 @@ class _AdminShowFishDiseaseseState extends State<AdminShowFishDiseasese> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(6),
                               border: Border.all(
-                                  color: Color.fromARGB(255, 165, 222, 245))),
+                                color: Color.fromARGB(255, 247, 169, 60),
+                              )),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
@@ -60,7 +61,7 @@ class _AdminShowFishDiseaseseState extends State<AdminShowFishDiseasese> {
                                 Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                    "${res['diseaseTitle']}",
+                                    "${res['medicineTitle']}",
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
@@ -82,18 +83,18 @@ class _AdminShowFishDiseaseseState extends State<AdminShowFishDiseasese> {
                                 //   ],
                                 // ),
                                 Divider(
-                                  color: Colors.blue,
+                                   color: Color.fromARGB(255, 247, 169, 60),
                                 ),
                                 Text(
-                                  "Disease-Title : ${res['diseaseTitle']}",
+                                  "Medicine-Title: ${res['medicineTitle']}",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  "Disease-Symtomps : ${res['diseaseSymtomps']}",
+                                  "Medicine-Symtomps : ${res['medicineSymtomps']}",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  "Disease-Treatment : ${res['diseaseTreatment']}",
+                                  "Medicine-Treatment : ${res['medicineTreatment']}",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                               ],

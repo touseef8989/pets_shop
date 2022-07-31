@@ -23,9 +23,10 @@ class _LandingScreenState extends State<LandingScreen> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.6), BlendMode.dstATop),
               image: NetworkImage(
                 "https://is4-ssl.mzstatic.com/image/thumb/Purple20/v4/82/07/b4/8207b46c-463e-516e-dcbc-ad58dfa002dd/source/512x512bb.jpg",
-                
               ),
             ),
           ),
@@ -60,7 +61,7 @@ class _LandingScreenState extends State<LandingScreen> {
                   color: Colors.blueAccent,
                   shape: BoxShape.circle,
                   border: Border.all(
-                      color: Color.fromARGB(255, 190, 248, 252),
+                      color: Color.fromARGB(255, 250, 201, 131),
                       width: 10.0,
                       style: BorderStyle.solid),
                   image: new DecorationImage(

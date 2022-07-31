@@ -5,13 +5,14 @@ import 'package:flutter/material.dart';
 
 final currentId = FirebaseAuth.instance.currentUser!.uid;
 
-class AllFishFood extends StatelessWidget {
-  const AllFishFood({Key? key}) : super(key: key);
+class SellerViewPetFood extends StatelessWidget {
+  const SellerViewPetFood({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 247, 169, 60),
         title: Text("ALL FISH FOOD"),
       ),
       body: StreamBuilder(

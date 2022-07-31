@@ -25,7 +25,7 @@ class _AdminViewSellerState extends State<AdminViewSeller> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Color.fromARGB(255, 71, 207, 241),
+          backgroundColor: Color.fromARGB(255, 247, 169, 60),
           title: Text("Seller Record"),
         ),
         body: Padding(
@@ -52,7 +52,7 @@ class _AdminViewSellerState extends State<AdminViewSeller> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(6),
                               border: Border.all(
-                                  color: Color.fromARGB(255, 165, 222, 245))),
+                                   color: Color.fromARGB(255, 247, 169, 60),)),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
@@ -84,7 +84,7 @@ class _AdminViewSellerState extends State<AdminViewSeller> {
                                 //   ],
                                 // ),
                                 Divider(
-                                  color: Colors.blue,
+                                   color: Color.fromARGB(255, 247, 169, 60),
                                 ),
                                 Text(
                                   "Seller : ${res['name']}",

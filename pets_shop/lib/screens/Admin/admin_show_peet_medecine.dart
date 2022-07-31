@@ -1,14 +1,24 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class AdminViewBuyer extends StatefulWidget {
-  const AdminViewBuyer({Key? key}) : super(key: key);
+class AdminShowPeetMedicine extends StatefulWidget {
+  const AdminShowPeetMedicine({Key? key}) : super(key: key);
 
   @override
-  State<AdminViewBuyer> createState() => _AdminViewBuyerState();
+  State<AdminShowPeetMedicine> createState() => _AdminShowPeetMedicineState();
 }
 
-class _AdminViewBuyerState extends State<AdminViewBuyer> {
+class _AdminShowPeetMedicineState extends State<AdminShowPeetMedicine> {
+  // CollectionReference db = FirebaseFirestore.instance
+  //     .collection("user")
+  //     .where("type", isEqualTo: "seller") as CollectionReference<Object?>;
+  // delete(String id, BuildContext context) {
+  //   db.doc(id).delete().then(
+  //         (value) => ScaffoldMessenger.of(context).showSnackBar(
+  //             const SnackBar(content: Text("successfuly deleted"))),
+  //       );
+  // }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -16,15 +26,13 @@ class _AdminViewBuyerState extends State<AdminViewBuyer> {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Color.fromARGB(255, 247, 169, 60),
-          title: Text("Buyer Record"),
+          title: Text("Show-Peet-Medicine"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: StreamBuilder(
-            stream: FirebaseFirestore.instance
-                .collection('user')
-                .where('type', isEqualTo: 'buyer')
-                .snapshots(),
+            stream:
+                FirebaseFirestore.instance.collection('medicine').snapshots(),
             // initialData: initialData,
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -42,7 +50,8 @@ class _AdminViewBuyerState extends State<AdminViewBuyer> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(6),
                               border: Border.all(
-                                   color: Color.fromARGB(255, 247, 169, 60),)),
+                                color: Color.fromARGB(255, 247, 169, 60),
+                              )),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
@@ -52,7 +61,7 @@ class _AdminViewBuyerState extends State<AdminViewBuyer> {
                                 Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                    "${res['name']}",
+                                    "${res['medicineTitle']}",
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
@@ -63,7 +72,9 @@ class _AdminViewBuyerState extends State<AdminViewBuyer> {
                                 //   children: [
                                 //     IconButton(
                                 //       splashColor: Colors.red,
-                                //       onPressed: () {},
+                                //       onPressed: () {
+                                //         // delete(res.id, context);
+                                //       },
                                 //       icon: Icon(
                                 //         Icons.delete,
                                 //         color: Colors.red,
@@ -74,27 +85,18 @@ class _AdminViewBuyerState extends State<AdminViewBuyer> {
                                 Divider(
                                    color: Color.fromARGB(255, 247, 169, 60),
                                 ),
-
                                 Text(
-                                  "Buyer : ${res['name']}",
+                                  "Medicine-Title: ${res['medicineTitle']}",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  "Buyer-email : ${res['email']}",
+                                  "Medicine-Symtomps : ${res['medicineSymtomps']}",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                // Text(
-                                //   "child email : ${res['child_email']}",
-                                //   style: TextStyle(fontWeight: FontWeight.bold),
-                                // ),
-                                // Text(
-                                //   "phone : ${res['phone']}",
-                                //   style: TextStyle(fontWeight: FontWeight.bold),
-                                // ),
-                                // Text(
-                                //   "email ${res['email']}",
-                                //   style: TextStyle(fontWeight: FontWeight.bold),
-                                // ),
+                                Text(
+                                  "Medicine-Treatment : ${res['medicineTreatment']}",
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
                               ],
                             ),
                           )),

@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:pets_shop/models/equipment_model.dart';
+import 'package:pets_shop/models/accessories_model.dart';
 import 'package:pets_shop/widgets/ecobutton.dart';
 import 'package:pets_shop/widgets/ecotextfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';

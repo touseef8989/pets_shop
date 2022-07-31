@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pets_shop/screens/user_screens/equipments/detail_equipments.dart';
+import 'package:pets_shop/screens/user_screens/user-accessories/user_detail_accessories.dart.dart';
 import 'package:sizer/sizer.dart';
 
 class AllAccessories extends StatelessWidget {

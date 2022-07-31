@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../models/disease_model.dart';
+import '../../models/medicine_model.dart';
 import '../../utils/style.dart';
 import '../../widgets/ecobutton.dart';
 import '../../widgets/ecotextfield.dart';
@@ -93,11 +93,11 @@ class _AdminAddDiseaseFieldScreenState
     setState(() {
       isSaving = true;
     });
-    await DiseaseModel.addProducts(
-      DiseaseModel(
-        diseaseTitle: diseaseTitle.text,
-        diseaseTreatment: diseaseTreatment.text,
-        diseaseSymtomps: diseaseSymtomps.text,
+    await MedicineModel.addProducts(
+      MedicineModel(
+        medicineTitle: diseaseTitle.text,
+        medicineTreatment: diseaseTreatment.text,
+        medicineSymtomps: diseaseSymtomps.text,
       ),
     ).whenComplete(() {
       setState(() {

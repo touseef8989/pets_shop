@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../models/cartModel.dart';
-import '../../../models/equipment_model.dart';
+import '../../../models/accessories_model.dart';
 import '../../../widgets/header.dart';
 
 // import '../widgets/header.dart';

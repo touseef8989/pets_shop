@@ -1,5 +1,5 @@
-import 'package:pets_shop/screens/Admin/admin_show_equipments.dart';
-import 'package:pets_shop/screens/Admin/admin_show_fish_diseases.dart';
+import 'package:pets_shop/screens/Admin/admin_show_accessories.dart';
+import 'package:pets_shop/screens/Admin/admin_show_peet_medecine.dart';
 import 'package:pets_shop/screens/Admin/admin_view_users_box.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -99,21 +99,21 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
               },
             ),
             EcoButton(
-              title: "Show_Equipments",
+              title: "Show_Accessories",
               onpress: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => AdminShowequipments()));
+                        builder: (context) => Adminshowaccessories()));
               },
             ),
             EcoButton(
-              title: "Show-Fish-Desease",
+              title: "Show-Peet-Medicine",
               onpress: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => AdminShowFishDiseasese()));
+                        builder: (context) => AdminShowPeetMedicine()));
               },
             ),
           ],

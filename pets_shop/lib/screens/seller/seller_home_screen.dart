@@ -1,21 +1,19 @@
 import 'package:pets_shop/checking_screen.dart';
-import 'package:pets_shop/screens/seller/equipments/add_accessories.dart';
-import 'package:pets_shop/screens/seller/fish_foods/add_fish_food.dart';
-import 'package:pets_shop/screens/seller/fish_desease/add_disease_screen.dart';
+import 'package:pets_shop/screens/seller/fish_foods/seller_add_pet_food.dart';
+import 'package:pets_shop/screens/seller/fish_desease/seller-add_medicine_screen.dart';
 import 'package:pets_shop/screens/seller/checkout_screen/seller_order_screen.dart';
 import 'package:pets_shop/screens/seller/fish_desease/all_desease_screen.dart';
-import 'package:pets_shop/screens/seller/fish_foods/all_fish_food.dart';
+import 'package:pets_shop/screens/seller/fish_foods/seller_view_pet_food.dart';
 import 'package:pets_shop/screens/seller/seller_add_product.dart';
 import 'package:pets_shop/screens/seller/seller_show_product.dart';
-import 'package:pets_shop/screens/seller/fish_foods/add_fish_food.dart';
 import 'package:pets_shop/services/share_preff.dart';
-import 'package:pets_shop/utils/style.dart';
 import 'package:pets_shop/widgets/ecobutton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'equipments/all_accessories.dart';
+import 'accessories/add_accessories.dart';
+import 'accessories/all_accessories.dart';
 
 class SallerHomeScreen extends StatelessWidget {
   const SallerHomeScreen({Key? key}) : super(key: key);
@@ -94,7 +92,7 @@ class SallerHomeScreen extends StatelessWidget {
                 title: "ALL ACCESSORIES",
                 onpress: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AllEquipments()));
+                      MaterialPageRoute(builder: (context) => ALLAccessoriesHere()));
                 },
               ),
               const Text(
@@ -111,7 +109,7 @@ class SallerHomeScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => AddDeseaseScreen()));
+                          builder: (context) => AddMedicineScreen()));
                 },
               ),
               EcoButton(
@@ -120,7 +118,7 @@ class SallerHomeScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => AllFishDeseaseScreen()));
+                          builder: (context) => SellerViewMedicine()));
                 },
               ),
               const Text(
@@ -135,14 +133,14 @@ class SallerHomeScreen extends StatelessWidget {
                 title: "ADD PETS FOOD",
                 onpress: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AddFishFood()));
+                      MaterialPageRoute(builder: (context) => SellerAddPetFood()));
                 },
               ),
               EcoButton(
                 title: "ALL PETS FOOD",
                 onpress: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AllFishFood()));
+                      MaterialPageRoute(builder: (context) => SellerViewPetFood()));
                 },
               ),
               const Text(

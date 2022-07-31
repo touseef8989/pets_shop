@@ -1,28 +1,39 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class FishDiseasese extends StatefulWidget {
-  const FishDiseasese({Key? key}) : super(key: key);
+class ShowPeetFood extends StatefulWidget {
+  const ShowPeetFood({Key? key}) : super(key: key);
 
   @override
-  State<FishDiseasese> createState() => _FishDiseaseseState();
+  State<ShowPeetFood> createState() => _ShowPeetFoodState();
 }
 
-class _FishDiseaseseState extends State<FishDiseasese> {
+class _ShowPeetFoodState extends State<ShowPeetFood> {
+  // CollectionReference db = FirebaseFirestore.instance
+  //     .collection("user")
+  //     .where("type", isEqualTo: "seller") as CollectionReference<Object?>;
+  // delete(String id, BuildContext context) {
+  //   db.doc(id).delete().then(
+  //         (value) => ScaffoldMessenger.of(context).showSnackBar(
+  //             const SnackBar(content: Text("successfuly deleted"))),
+  //       );
+  // }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Color.fromARGB(255, 71, 207, 241),
-          title: Text("Fish-Desease"),
+          backgroundColor: Color.fromARGB(255, 247, 169, 60),
+          title: Text("Show_Pet_Food"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: StreamBuilder(
-            stream:
-                FirebaseFirestore.instance.collection('desease').snapshots(),
+            stream: FirebaseFirestore.instance
+                .collection('food')
+                .snapshots(),
             // initialData: initialData,
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -40,7 +51,8 @@ class _FishDiseaseseState extends State<FishDiseasese> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(6),
                               border: Border.all(
-                                  color: Color.fromARGB(255, 165, 222, 245))),
+                                color: Color.fromARGB(255, 247, 169, 60),
+                              )),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
@@ -50,7 +62,7 @@ class _FishDiseaseseState extends State<FishDiseasese> {
                                 Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                    "${res['diseaseTitle']}",
+                                    "${res['title']}",
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
@@ -72,20 +84,17 @@ class _FishDiseaseseState extends State<FishDiseasese> {
                                 //   ],
                                 // ),
                                 Divider(
-                                  color: Colors.blue,
+                                  color: Color.fromARGB(255, 247, 169, 60),
                                 ),
                                 Text(
-                                  "Disease-Title : ${res['diseaseTitle']}",
+                                  "Food Title : ${res['title']}",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  "Disease-Symtomps : ${res['diseaseSymtomps']}",
+                                  "Food-Detail : ${res['detail']}",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                Text(
-                                  "Disease-Treatment : ${res['diseaseTreatment']}",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
+                              
                               ],
                             ),
                           )),

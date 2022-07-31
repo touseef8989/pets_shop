@@ -1,5 +1,5 @@
 // import 'package:pets_shop/screens/saller/Admin/admin_add_disease_field.dart';
-import 'package:pets_shop/screens/seller/fish_desease/add_disease_screen.dart';
+import 'package:pets_shop/screens/seller/fish_desease/seller-add_medicine_screen.dart';
 import 'package:pets_shop/widgets/ecobutton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';

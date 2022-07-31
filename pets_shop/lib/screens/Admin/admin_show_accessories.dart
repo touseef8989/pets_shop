@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class AdminShowequipments extends StatefulWidget {
-  const AdminShowequipments({Key? key}) : super(key: key);
+class Adminshowaccessories extends StatefulWidget {
+  const Adminshowaccessories({Key? key}) : super(key: key);
 
   @override
-  State<AdminShowequipments> createState() => _AdminShowequipmentsState();
+  State<Adminshowaccessories> createState() => _AdminshowaccessoriesState();
 }
 
-class _AdminShowequipmentsState extends State<AdminShowequipments> {
+class _AdminshowaccessoriesState extends State<Adminshowaccessories> {
   // CollectionReference db = FirebaseFirestore.instance
   //     .collection("user")
   //     .where("type", isEqualTo: "seller") as CollectionReference<Object?>;
@@ -25,14 +25,15 @@ class _AdminShowequipmentsState extends State<AdminShowequipments> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Color.fromARGB(255, 71, 207, 241),
-          title: Text("Show_Equipments"),
+          backgroundColor: Color.fromARGB(255, 247, 169, 60),
+          title: Text("Show_Accessories"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: StreamBuilder(
-            stream:
-                FirebaseFirestore.instance.collection('equipments').snapshots(),
+            stream: FirebaseFirestore.instance
+                .collection('accessories')
+                .snapshots(),
             // initialData: initialData,
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -50,7 +51,8 @@ class _AdminShowequipmentsState extends State<AdminShowequipments> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(6),
                               border: Border.all(
-                                  color: Color.fromARGB(255, 165, 222, 245))),
+                                color: Color.fromARGB(255, 247, 169, 60),
+                              )),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
@@ -60,7 +62,7 @@ class _AdminShowequipmentsState extends State<AdminShowequipments> {
                                 Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                    "${res['equipmentName']}",
+                                    "${res['accessoriesName']}",
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
@@ -82,10 +84,10 @@ class _AdminShowequipmentsState extends State<AdminShowequipments> {
                                 //   ],
                                 // ),
                                 Divider(
-                                  color: Colors.blue,
+                                  color: Color.fromARGB(255, 247, 169, 60),
                                 ),
                                 Text(
-                                  "Names : ${res['equipmentName']}",
+                                  "Names : ${res['accessoriesName']}",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 Text(
